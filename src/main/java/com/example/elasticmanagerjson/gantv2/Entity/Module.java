@@ -1,4 +1,4 @@
-package com.example.elasticmanagerjson.gantt.entity;
+package com.example.elasticmanagerjson.gantv2.Entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -6,25 +6,24 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 
 @Entity
+@Table(name = "gantt_modules")
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "gantt_dependencies")
 @Getter
 @Setter
-public class Dependeny {
+public class Module implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String name;
 
-    @Column(name = "predecessor_id")
-    private Long predecessorId;
-
-    @Column(name = "successor_id")
-    private Long successorId;
-
-    private int type;
+    @OneToMany
+    @JoinColumn(name = "module_id")
+    List<ModuleItem> moduleItems;
 
 }

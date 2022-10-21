@@ -1,4 +1,4 @@
-package com.example.elasticmanagerjson.gantt.entity;
+package com.example.elasticmanagerjson.gantv2.Entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,12 +9,12 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "gantt_list_fields")
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "gantt_modules")
 @Getter
 @Setter
-public class Module {
+public class ListField {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +23,9 @@ public class Module {
     private String name;
 
     @OneToMany
-    @JoinColumn(name = "module_id")
-    List<Task> tasks;
+    @JoinColumn(name = "list_field_id")
+    private List<ListFieldItem> listFieldItems;
+
+    private Long module_item_id;
 
 }
