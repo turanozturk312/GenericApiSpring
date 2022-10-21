@@ -150,6 +150,11 @@ public class APIConstants {
 
     public static final String MEDIA = "/media";
 
+    //
+
+    public static final String GANGT = "/gantt";
+    public static final String GANTT_DATEFIELD = "/gantt/datefield";
+
 
 
     private APIConstants() {

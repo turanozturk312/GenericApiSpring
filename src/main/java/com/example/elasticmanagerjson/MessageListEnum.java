@@ -1116,7 +1116,14 @@ public enum MessageListEnum {
     INFO_YILDIZ_MAKE_MEMBER_USER_FROM_GROUP_SUCCESSFULLY("Yıldız Sisteminde Gruptaki Kullanıcının Admin Yetkisini Alma İşlemi Yapıldı."),
     ERROR_YILDIZ_MAKE_MEMBER_USER_FROM_GROUP_SYSTEM_EXCEPTION("Yıldız Sisteminde Gruptaki Kullanıcının Admin Yetkisini Alma İşlemi Yapılamadı. Sistem hatası."),
 
-    INFO_KULLANICI_TESIS_MATCHED("Kullanıcı ve Tesis bilgisi başarıyla eşleştirildi.");
+    INFO_KULLANICI_TESIS_MATCHED("Kullanıcı ve Tesis bilgisi başarıyla eşleştirildi."),
+
+    ///// GANTT
+    ERROR_GANTT_DATEFIELD_NOTFOUND("Bu id ile bir DateField bulunmamaktadır."),
+    INFO_GANTT_DATEFIELD_ADDED("DateField başarı ile eklendi."),
+    INFO_GANTT_DATEFIELD_UPDATED("DateField başarı ile güncellendi."),
+    INFO_GANTT_DATEFIELD_DELETED("DateField başarı ile silindi.");
+
 
     private String value;
 
