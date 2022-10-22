@@ -15,12 +15,13 @@ import java.util.Date;
 @NoArgsConstructor
 @Getter
 @Setter
-public class DateField implements Serializable {
+public class DateField extends BaseEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Date value;
+
     private Long module_item_id;
 
 }

@@ -9,5 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface NumericFieldRepository extends JpaRepository<NumericField,Long> {
-    Optional<NumericField> findAllByModule_item_id(Long moduleItemId);
+
 }
