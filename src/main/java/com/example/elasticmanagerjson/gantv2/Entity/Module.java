@@ -23,7 +23,19 @@ public class Module implements Serializable {
     private String name;
 
     @OneToMany
-    @JoinColumn(name = "module_id")
-    List<ModuleItem> moduleItems;
+    @JoinColumn(name = "module_item_id")
+    List<TextField> textFields;
+
+    @OneToMany
+    @JoinColumn(name = "module_item_id")
+    List<DateField> dateFields;
+
+    @OneToMany
+    @JoinColumn(name = "module_item_id")
+    List<NumericField> numericFields;
+
+    @OneToMany
+    @JoinColumn(name = "module_item_id")
+    List<ListField> listFields;
 
 }

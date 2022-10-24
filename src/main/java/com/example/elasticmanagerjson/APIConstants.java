@@ -150,12 +150,14 @@ public class APIConstants {
 
     public static final String MEDIA = "/media";
 
-    //
+    //gantt
 
     public static final String GANGT = "/gantt";
-    public static final String GANTT_DATEFIELD = "/gantt/datefield";
-
-
+    public static final String GANTT_DATEFIELD = "/gantt/datefields";
+    public static final String GANTT_LISTFIELD = "/gantt/listfields";
+    public static final String GANTT_LISTFIELDITEM = "/gantt/listfielditems";
+    public static final String GANTT_MODULE = "/gantt/modules";
+    public static final String GANTT_FIELDS = "/gantt/fields";
 
     private APIConstants() {
 

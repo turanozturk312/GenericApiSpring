@@ -1,6 +1,6 @@
 package com.example.elasticmanagerjson.gantv2.Dto;
 
-import com.example.elasticmanagerjson.gantv2.Entity.ModuleItem;
+import com.example.elasticmanagerjson.gantv2.Entity.GanttItem;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -10,7 +10,8 @@ import java.util.List;
 public class ModuleDto {
 
     private Long id;
+    private Long moduleId;
     private String name;
-    List<ModuleItem> moduleItems;
+    private String type;
 
 }

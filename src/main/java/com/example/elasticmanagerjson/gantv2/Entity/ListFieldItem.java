@@ -20,4 +20,7 @@ public class ListFieldItem {
     private Long id;
     private String item;
 
+    @Column(name = "list_field_id")
+    private Long listFieldItemId;
+
 }

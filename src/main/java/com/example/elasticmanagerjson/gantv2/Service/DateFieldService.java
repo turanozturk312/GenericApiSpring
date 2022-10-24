@@ -1,9 +1,10 @@
-package com.example.elasticmanagerjson.gantv2.Entity;
+package com.example.elasticmanagerjson.gantv2.Service;
 
 import com.example.elasticmanagerjson.EafadResponse;
 import com.example.elasticmanagerjson.MessageCodeEnum;
 import com.example.elasticmanagerjson.MessageListEnum;
 import com.example.elasticmanagerjson.gantv2.Dto.DateFieldDto;
+import com.example.elasticmanagerjson.gantv2.Entity.DateField;
 import com.example.elasticmanagerjson.gantv2.Repository.DateFieldRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -20,9 +21,6 @@ public class DateFieldService {
     private final DateFieldRepository dateFieldRepository;
     private final ModelMapper modelMapper;
 
-    public List<DateFieldDto> findAllByModuleItemId(Long moduleItemId){
-        return modelMapper.map(modelMapper.map(dateFieldRepository.findAllByModule_item_id(moduleItemId).get(), DateFieldDto.class),List.class);
-    }
 
     public DateFieldDto add(DateFieldDto dateFieldDto){
         return modelMapper.map(

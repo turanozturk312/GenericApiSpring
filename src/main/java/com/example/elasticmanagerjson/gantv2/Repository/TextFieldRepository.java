@@ -9,5 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface TextFieldRepository extends JpaRepository<TextField,Long> {
-    Optional<TextField> findAllByModule_item_id(Long moduleItemId);
+
 }

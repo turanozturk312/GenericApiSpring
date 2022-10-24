@@ -12,5 +12,6 @@ public class ListFieldDto {
     private Long id;
     private String name;
     private List<ListFieldItem> listFieldItems;
+    private Long ganttItemId;
 
 }

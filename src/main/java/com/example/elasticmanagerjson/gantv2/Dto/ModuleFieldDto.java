@@ -6,12 +6,13 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import java.util.List;
 @Data
-public class TextFieldDto {
+public class ModuleFieldDto {
 
     private Long id;
-    private String value;
-    private Long ganttItemId;
+    private Long moduleId;
+    private String name;
+    private String type;
 
 }

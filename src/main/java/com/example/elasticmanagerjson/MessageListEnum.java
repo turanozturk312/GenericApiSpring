@@ -1122,7 +1122,24 @@ public enum MessageListEnum {
     ERROR_GANTT_DATEFIELD_NOTFOUND("Bu id ile bir DateField bulunmamaktadır."),
     INFO_GANTT_DATEFIELD_ADDED("DateField başarı ile eklendi."),
     INFO_GANTT_DATEFIELD_UPDATED("DateField başarı ile güncellendi."),
-    INFO_GANTT_DATEFIELD_DELETED("DateField başarı ile silindi.");
+    INFO_GANTT_DATEFIELD_DELETED("DateField başarı ile silindi."),
+    ERROR_GANTT_LISTFIELD_NOTFOUND("Bu id ile bir ListField bulunmamaktadır."),
+    INFO_GANTT_LISTFIELD_ADDED("ListField başarı ile eklendi."),
+    INFO_GANTT_LISTFIELD_UPDATED("ListField başarı ile güncellendi."),
+    INFO_GANTT_LISTFIELD_DELETED("ListField başarı ile silindi."),
+    ERROR_GANTT_LISTFIELDITEM_NOTFOUND("Bu id ile bir ListFieldItem bulunmamaktadır."),
+    INFO_GANTT_LISTFIELDITEM_ADDED("ListFieldItem başarı ile eklendi."),
+    INFO_GANTT_LISTFIELDITEM_UPDATED("ListFieldItem başarı ile güncellendi."),
+    INFO_GANTT_LISTFIELDITEM_DELETED("ListFieldItem başarı ile silindi."),
+    INFO_GANTT_LISTFIELDITEM_LISTED("ListFieldItems başarı ile listelendi."),
+    //
+    ERROR_GANTT_MODULE_NOTFOUND("Bu id ile bir module bulunmamaktadır."),
+    INFO_GANTT_MODULE_ADDED("module başarı ile eklendi."),
+    INFO_GANTT_MODULE_UPDATED("module başarı ile güncellendi."),
+    INFO_GANTT_MODULE_DELETED("module başarı ile silindi."),
+    INFO_GANTT_MODULE_LISTED("modules başarı ile listelendi."),
+    INFO_GANTT_FIELDS_LISTED("Alanlar listelendi.");
+
 
 
     private String value;

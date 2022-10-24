@@ -20,7 +20,8 @@ public class DateField implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Date value;
-    private Long module_item_id;
+    private String name;
+    @Column(name = "module_id")
+    private Long moduleId;
 
 }

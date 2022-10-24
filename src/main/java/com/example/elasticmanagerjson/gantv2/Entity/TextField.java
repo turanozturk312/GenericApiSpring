@@ -19,6 +19,8 @@ public class TextField implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String value;
-    private Long module_item_id;
+    private String name;
+    @Column(name = "module_id")
+    private Long moduleId;
+
 }

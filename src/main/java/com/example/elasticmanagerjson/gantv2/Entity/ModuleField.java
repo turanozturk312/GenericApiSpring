@@ -6,21 +6,22 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
-@Table(name = "gantt_numeric_fields")
+@Table(name = "gantt_module_fields")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class NumericField {
+public class ModuleField {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+
     @Column(name = "module_id")
     private Long moduleId;
+    private String name;
+    private String type;
 
 }

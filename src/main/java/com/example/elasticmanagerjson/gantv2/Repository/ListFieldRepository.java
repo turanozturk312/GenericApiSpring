@@ -9,5 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface ListFieldRepository extends JpaRepository<ListField,Long> {
-    Optional<ListField> findAllByModule_item_id(Long moduleItemId);
+
 }

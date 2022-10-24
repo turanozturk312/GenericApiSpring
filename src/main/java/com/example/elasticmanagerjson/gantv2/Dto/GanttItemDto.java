@@ -11,18 +11,17 @@ import java.util.Date;
 import java.util.List;
 
 @Data
-public class ModuleItem {
+public class GanttItemDto {
 
     private Long id;
     private Long parentId;
     private String title;
     private Date start;
     private Date end;
+    private Long moduleId;
     List<TextField> textFields;
     List<DateField> dateFields;
     List<NumericField> numericFields;
     List<ListField> listFields;
-    private int progress;
-    private String color;
 
 }

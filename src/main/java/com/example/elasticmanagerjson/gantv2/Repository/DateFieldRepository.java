@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface DateFieldRepository extends JpaRepository<DateField,Long> {
-    Optional<DateField> findAllByModule_item_id(Long moduleItemId);
+
 }
