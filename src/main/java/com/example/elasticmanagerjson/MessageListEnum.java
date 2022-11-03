@@ -1133,14 +1133,29 @@ public enum MessageListEnum {
     INFO_GANTT_LISTFIELDITEM_DELETED("ListFieldItem başarı ile silindi."),
     INFO_GANTT_LISTFIELDITEM_LISTED("ListFieldItems başarı ile listelendi."),
     //
+    INFO_GANTT_MODULE_LISTED("modules başarı ile listelendi."),
     ERROR_GANTT_MODULE_NOTFOUND("Bu id ile bir module bulunmamaktadır."),
     INFO_GANTT_MODULE_ADDED("module başarı ile eklendi."),
     INFO_GANTT_MODULE_UPDATED("module başarı ile güncellendi."),
     INFO_GANTT_MODULE_DELETED("module başarı ile silindi."),
-    INFO_GANTT_MODULE_LISTED("modules başarı ile listelendi."),
-    INFO_GANTT_FIELDS_LISTED("Alanlar listelendi.");
+    INFO_GANTT_FIELDS_LISTED("Alanlar listelendi."),
+    INFO_GANTT_FIELDS_ADDED("Fields başarı ile eklendi."),
+    INFO_GANTT_FIELDS_UPDATED("Fields başarı ile güncellendi."),
+    INFO_GANTT_FIELDS_DELETED("Fields başarı ile silindi."),
+    INFO_GANTT_GANTTOBJECTS_LISTED("Alanlar listelendi."),
+    INFO_GANTT_GANTTOBJECTS_ADDED("Fields başarı ile eklendi."),
+    INFO_GANTT_GANTTOBJECTS_UPDATED("Fields başarı ile güncellendi."),
+    INFO_GANTT_GANTTOBJECTS_DELETED("Fields başarı ile silindi."),
 
+    INFO_GANTT_LISTFIELDITEMS_LISTED("ListFieldItems listelendi."),
+    INFO_GANTT_LISTFIELDITEMS_ADDED("ListFieldItem başarı ile eklendi."),
+    INFO_GANTT_LISTFIELDITEMS_UPDATED("ListFieldItem başarı ile güncellendi."),
+    INFO_GANTT_LISTFIELDITEMS_DELETED("ListFieldItem başarı ile silindi."),
 
+    INFO_GANTT_DEPENDENCİES_LISTED("Dependencies listelendi."),
+    INFO_GANTT_DEPENDENCİES_ADDED("Dependency başarı ile eklendi."),
+    INFO_GANTT_DEPENDENCİES_UPDATED("Dependency başarı ile güncellendi."),
+    INFO_GANTT_DEPENDENCİES_DELETED("Dependency başarı ile silindi.");
 
     private String value;
 

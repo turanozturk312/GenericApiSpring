@@ -8,10 +8,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Data
-public class TextFieldDto {
+public class FieldDto {
 
     private Long id;
-    private String value;
-    private Long ganttItemId;
+    private Long moduleId;
+    private String name;
+    private String type;
+    private String part;
 
 }

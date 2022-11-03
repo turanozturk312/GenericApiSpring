@@ -153,20 +153,21 @@ public class APIConstants {
     //gantt
 
     public static final String GANGT = "/gantt";
-    public static final String GANTT_DATEFIELD = "/gantt/datefields";
-    public static final String GANTT_LISTFIELD = "/gantt/listfields";
-    public static final String GANTT_LISTFIELDITEM = "/gantt/listfielditems";
     public static final String GANTT_MODULE = "/gantt/modules";
     public static final String GANTT_FIELDS = "/gantt/fields";
+    public static final String GANTT_GANTTOBJECTS = "/gantt/ganttobjects";
+    public static final String GANTT_LISTFIELDITEMS = "/gantt/listfielditems";
+    public static final String GANTT_FILES = "/gantt/files";
+    public static final String GANTT_DEPENDENCİES = "/gantt/dependencies";
 
     private APIConstants() {
 
     }
 
-    public static MultivaluedMap<String, Object> createHeaders(String bearerToken){
+    public static MultivaluedMap<String, Object> createHeaders(String bearerToken) {
         MultivaluedMap<String, Object> headers = new MultivaluedHashMap<>();
-        headers.add("Content-Type","application/json");
-        headers.add("Authorization",bearerToken);
+        headers.add("Content-Type", "application/json");
+        headers.add("Authorization", bearerToken);
         return headers;
     }
 

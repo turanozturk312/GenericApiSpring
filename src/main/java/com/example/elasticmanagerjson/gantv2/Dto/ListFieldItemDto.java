@@ -12,6 +12,6 @@ public class ListFieldItemDto {
 
     private Long id;
     private String item;
-    private Long listFieldItemId;
+    private Long fieldId;
 
 }

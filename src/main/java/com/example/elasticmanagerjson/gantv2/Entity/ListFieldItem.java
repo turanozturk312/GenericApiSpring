@@ -18,9 +18,14 @@ public class ListFieldItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String item;
 
-    @Column(name = "list_field_id")
-    private Long listFieldItemId;
+    @Column(name = "field_id")
+    private Long fieldId;
 
+    public ListFieldItem(String item, Long fieldId) {
+        this.item = item;
+        this.fieldId = fieldId;
+    }
 }

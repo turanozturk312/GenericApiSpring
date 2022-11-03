@@ -1,15 +1,12 @@
 package com.example.elasticmanagerjson.gantv2.Repository;
 
+import com.example.elasticmanagerjson.gantv2.Entity.Field;
 import com.example.elasticmanagerjson.gantv2.Entity.ListFieldItem;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
+import java.util.List;
 
-@Repository
 public interface ListFieldItemRepository extends JpaRepository<ListFieldItem,Long> {
-
-    Optional<ListFieldItem> findAllByListFieldItemId(Long id);
-
+    List<ListFieldItem> findAllByFieldId(Long fieldId);
+    <S extends ListFieldItem> List<S> saveAll(Iterable<S> entities);
 }
-

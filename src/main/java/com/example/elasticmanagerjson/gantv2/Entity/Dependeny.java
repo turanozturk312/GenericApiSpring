@@ -6,25 +6,24 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
-@Table(name = "gantt_modules")
+@Table(name = "gantt_dependencies")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class Hedef {
+public class Dependeny {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany
-    @JoinColumn(name = "hedef_id")
-    private List<HedefField> fields;
-
     @Column(name = "module_id")
     private Long moduleId;
+
+    private Long predecessorId;
+    private Long successorId;
+    private int type;
 
 }

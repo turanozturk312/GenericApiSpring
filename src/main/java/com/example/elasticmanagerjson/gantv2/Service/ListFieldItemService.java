@@ -1,18 +1,16 @@
 package com.example.elasticmanagerjson.gantv2.Service;
 
-import com.example.elasticmanagerjson.gantv2.Dto.DateFieldDto;
-import com.example.elasticmanagerjson.gantv2.Dto.ListFieldDto;
+import com.example.elasticmanagerjson.gantv2.Dto.FieldDto;
 import com.example.elasticmanagerjson.gantv2.Dto.ListFieldItemDto;
-import com.example.elasticmanagerjson.gantv2.Entity.DateField;
-import com.example.elasticmanagerjson.gantv2.Entity.ListField;
+import com.example.elasticmanagerjson.gantv2.Entity.Field;
 import com.example.elasticmanagerjson.gantv2.Entity.ListFieldItem;
 import com.example.elasticmanagerjson.gantv2.Repository.ListFieldItemRepository;
-import com.example.elasticmanagerjson.gantv2.Repository.ListFieldRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -21,31 +19,48 @@ public class ListFieldItemService {
     private final ListFieldItemRepository listFieldItemRepository;
     private final ModelMapper modelMapper;
 
-    public List<ListFieldItemDto> findAllByListFieldId(Long listFieldId){
-        return modelMapper.map(modelMapper.map(listFieldItemRepository.findAllByListFieldItemId(listFieldId).get(), ListFieldItemDto.class),List.class);
+    //Findall
+    public List<com.example.elasticmanagerjson.gantv2.Dto.ListFieldItemDto> findAllByFieldId(Long fieldId){
+        List<ListFieldItem> listFieldItemList = listFieldItemRepository.findAllByFieldId(fieldId);
+        List<com.example.elasticmanagerjson.gantv2.Dto.ListFieldItemDto> listFieldItemDtoList = listFieldItemList.stream().map(
+                item -> modelMapper.map(item, com.example.elasticmanagerjson.gantv2.Dto.ListFieldItemDto.class)
+        ).collect(Collectors.toList());
+        return listFieldItemDtoList;
     }
 
-    public ListFieldItemDto add(ListFieldItemDto listFieldDto){
-        return modelMapper.map(
-                listFieldItemRepository.save(modelMapper.map(listFieldDto, ListFieldItem.class)),ListFieldItemDto.class
-        );
+    public List<ListFieldItemDto> addAll(List<ListFieldItemDto> listFieldItemDtoList){
+        List<ListFieldItem> listFieldItemList = listFieldItemDtoList.stream().map(
+                fieldDto -> modelMapper.map(fieldDto, ListFieldItem.class)
+        ).collect(Collectors.toList());
+        List<ListFieldItem> addedListFieldItems = listFieldItemRepository.saveAll(listFieldItemList);
+        List<ListFieldItemDto> addedListFieldItemsDtoList = addedListFieldItems.stream().map(
+                field -> modelMapper.map(field,ListFieldItemDto.class)
+        ).collect(Collectors.toList());
+        return addedListFieldItemsDtoList;
     }
 
-    public ListFieldItemDto update(ListFieldItemDto listFieldItemDto, Long id){
-        if(listFieldItemRepository.findById(id).isEmpty()){
 
+
+    //Add
+    public com.example.elasticmanagerjson.gantv2.Dto.ListFieldItemDto add(com.example.elasticmanagerjson.gantv2.Dto.ListFieldItemDto listFieldItemDto){
+        return modelMapper.map(listFieldItemRepository.save(modelMapper.map(listFieldItemDto,ListFieldItem.class)), com.example.elasticmanagerjson.gantv2.Dto.ListFieldItemDto.class);
+    }
+
+    //Update
+    public com.example.elasticmanagerjson.gantv2.Dto.ListFieldItemDto update(com.example.elasticmanagerjson.gantv2.Dto.ListFieldItemDto listFieldItemDto, Long listFieldItemId){
+        if(listFieldItemRepository.findById(listFieldItemId).isPresent()){
+            return modelMapper.map(listFieldItemRepository.save(modelMapper.map(listFieldItemDto,ListFieldItem.class)), com.example.elasticmanagerjson.gantv2.Dto.ListFieldItemDto.class);
         }
-        return modelMapper.map(
-                listFieldItemRepository.save(modelMapper.map(listFieldItemDto, ListFieldItem.class)),ListFieldItemDto.class
-        );
+        return null;
     }
 
-    public void delete(Long id){
-        if(listFieldItemRepository.findById(id).isEmpty()){
-
-        }
-        listFieldItemRepository.deleteById(id);
+    //Delete
+    public Boolean delete(Long listFieldItemId){
+        listFieldItemRepository.deleteById(listFieldItemId);
+        return true;
     }
+
+
 
 
 }

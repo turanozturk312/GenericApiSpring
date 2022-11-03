@@ -10,32 +10,31 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Table(name = "gantt_modules")
+@Table(name = "gantt_fields")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class Module implements Serializable {
+public class Field implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "module_id")
+    private Long moduleId;
     private String name;
+    private String type;
+    private String part;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "module_id")
-    private List<Field> fields;
+    @JoinColumn(name = "field_id")
+    private List<ListFieldItem> listFieldItems;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "module_id")
-    private List<GanttObject> ganttObjects;
-
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "module_id")
-    private List<Dependeny> dependenies;
-
-    private String orderOfItems;
-
-
+    public Field(Long moduleId, String name, String part, String type) {
+        this.moduleId = moduleId;
+        this.name = name;
+        this.type = type;
+        this.part = part;
+    }
 }
